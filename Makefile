@@ -1,13 +1,12 @@
 CC = gcc
-CFLAGS = -Wall `pkg-config --cflags gtk+-3.0`
-LDFLAGS = `pkg-config --libs gtk+-3.0`
-SRC = src/main.c src/game_logic.c src/gui.c
+CFLAGS = -Wall
+SRC = src/main.c src/game_logic.c
 TARGET = build/minesweeper
 
 all: $(TARGET)
 
 $(TARGET): $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(TARGET) $(LDFLAGS)
+	$(CC) $(CFLAGS) $(SRC) -o $(TARGET)
 
 clean:
 	rm -f $(TARGET)
